@@ -1,73 +1,45 @@
-# React + TypeScript + Vite
+# Trabalho de Desenvolvimento WEB - React + TypeScript
+## Descrição do Projeto
+Esta aplicação foi desenvolvida como parte da disciplina de Desenvolvimento WEB e Front-end. O objetivo principal é criar uma interface funcional em React que utiliza o ecossistema Google para autenticação e manipulação de dados de usuário.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+A aplicação permite que o usuário realize login via conta Google e utilize essas informações para pré-preencher um formulário de cadastro, que gera um objeto JSON para validação de dados. O projeto adota práticas modernas de desenvolvimento, como componentes funcionais, hooks para gerenciamento de estado e uma interface responsiva com tema escuro.
+### Funcionalidades
+- **Autenticação Google OAuth 2.0:** Integração completa para login seguro, recuperando nome, e-mail e foto do perfil.
+- **Navegação Estruturada:** Barra superior funcional que permite transitar entre a Home, Apresentação e Cadastro.
+- **Página de Apresentação:** Seção detalhada sobre o desenvolvedor, incluindo formação acadêmica em Matemática e Engenharia de Software.
+- **Formulário de Cadastro Inteligente:** Pré-preenchimento automático dos dados obtidos no login, com funcionalidade de geração de JSON em tempo real.
+- **Persistência de Sessão:** Uso de localStorage para manter o estado do usuário logado mesmo após o recarregamento da página.
+### Tecnologias Utilizadas
+- **Vite:** Ferramenta de build e ambiente de desenvolvimento.
+- **React:** Biblioteca principal para construção da UI.
+- **TypeScript:** Tipagem estática para maior segurança e manutenção do código.
+- **React Router:** Gerenciamento de rotas e navegação dinâmica.
+- **@react-oauth/google & jwt-decode:** Gestão de autenticação e decodificação de tokens JWT.
+- **CSS Modules:** Estilização modular e organizada.
+### Estrutura do Projeto
+O código está organizado de forma a facilitar a escalabilidade e reutilização:
+- `/src/components`: Contém as páginas da aplicação (Home, Apresentacao, Cadastro) e o componente de Layout.
+- `/src/assets`: Recursos estáticos como imagens e fotos.
+- `router.tsx`: Configuração das rotas da aplicação.
+- `App.module.css`: Estilização centralizada com variáveis de tema escuro.
+## Instruções para Execução Local
+Siga os passos abaixo para rodar o projeto em sua máquina:
+1. **Clonar o repositório:**
+```Bash
+git clone https://github.com/BrayanVinicius/react-google-auth-json.git
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Instalar as dependências:**
+```Bash
+npm install
 ```
+3. **Configurar o Client ID do Google:**
+No arquivo onde o GoogleOAuthProvider está configurado, insira o seu Client ID gerado no console do Google Cloud.
+4. Iniciar o servidor de desenvolvimento:
+```Bash
+npm run dev
+```
+5. **Acessar no navegador:**
+Abra o link indicado pelo terminal (geralmente http://localhost:5173).
+## Deploy da Aplicação
+O projeto está publicado e pode ser acessado online através do link abaixo:
+[GitHub Pages](https://brayanvinicius.github.io/react-google-auth/)
