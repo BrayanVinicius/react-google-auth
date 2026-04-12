@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+/* --- Variáveis de Tema Escuro --- */
+:root {
+  --primary-color: #1a1a1a;    /* Preto profundo para o topo */
+  --secondary-color: #2d2d2d;
+  --accent-color: #375bd1;     /* Verde mais vibrante para contraste */
+  --danger-color: #ff1515;     /* Vermelho suave */
+  --bg-color: #121212;         /* Fundo da página */
+  --text-color: #e0e0e0;       /* Texto claro (não puro branco para não cansar a vista) */
+  --gray: #1e1e1e;            /* Cor dos Cards (cinza muito escuro) */
+  --border-color: #333;
+}
+
+.pageConteiner {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Barra do Topo (Layout) --- */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.topBar h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--accent-color); /* Título em destaque */
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLinks a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navLinks a:hover {
+  color: var(--accent-color);
+}
+
+.logoutBtnSmall {
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logoutBtnSmall:hover {
+  background-color: #c00e0e;
+}
+
+/* --- Conteúdo Principal --- */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- Cards (Home, Apresentação e Cadastro) --- */
+.userCard, .profileCard, .userInfo {
+  background-color: var(--gray);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.profilePicture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+/* --- Tela de Apresentação --- */
+.profileDescription {
+  text-align: left;
+  margin-top: 1.5rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* --- Tela de Cadastro --- */
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 0.5rem;
+}
+
+.formGroup input {
+  padding: 0.8rem;
+  background-color: #252525;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: white;
+  font-size: 1rem;
+}
+
+.formGroup input:focus {
+  outline: 2px solid var(--accent-color);
+}
+
+.submitBtn {
+  background-color: var(--accent-color);
+  color: #000; /* Texto escuro no botão claro para melhor leitura */
+  border: none;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  background-color: #20357c;
+}
+
+/* --- JSON Gerado --- */
+.jsonResult {
+  margin-top: 2rem;
+  background-color: #000;
+  color: #00ff00; /* Verde matrix clássico */
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: left;
+  border: 1px solid #333;
+}
+
+/* --- Correção da Home --- */
+.loginBox {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
