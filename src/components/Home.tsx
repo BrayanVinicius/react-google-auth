@@ -1,8 +1,8 @@
 import { useOutletContext } from 'react-router';
-import { GoogleLogin } from '@react-oauth/google'
-import { jwtDecode } from 'jwt-decode'
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from 'jwt-decode';
 
-import styles from '../App.module.css'
+import styles from '../App.module.css';
 
 interface User {
     name: string;
@@ -16,7 +16,7 @@ export function Home() {
     function login(credentialResponse: { credential?: string }) {
         if (credentialResponse.credential) {
             const decoded = jwtDecode<User>(credentialResponse.credential)
-            setUser(decoded)
+            setUser(decoded);
             localStorage.setItem('usuarioLogado', JSON.stringify(decoded));
         }
     }

@@ -42,4 +42,4 @@ npm run dev
 Abra o link indicado pelo terminal (geralmente http://localhost:5173).
 ## Deploy da Aplicação
 O projeto está publicado e pode ser acessado online através do link abaixo:
-[GitHub Pages](https://brayanvinicius.github.io/react-google-auth/)
+[Vercel](https://react-google-auth-gamma.vercel.app/)

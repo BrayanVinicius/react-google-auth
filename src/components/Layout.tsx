@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, Outlet, useNavigate } from 'react-router';
-import { googleLogout } from '@react-oauth/google'
+import { googleLogout } from '@react-oauth/google';
 
-import styles from '../App.module.css'
+import styles from '../App.module.css';
 
 interface User {
     name: string;
@@ -11,20 +11,20 @@ interface User {
 }
 
 export function Layout() {
-    const [user, setUser] = useState<User | null>(null)
-    const navigate = useNavigate()
+    const [user, setUser] = useState<User | null>(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        const savedUser = localStorage.getItem('usuarioLogado')
+        const savedUser = localStorage.getItem('usuarioLogado');
         if (savedUser) {
-            setUser(JSON.parse(savedUser))
+            setUser(JSON.parse(savedUser));
         }
     }, []);
 
     function logout() {
-        googleLogout()
-        setUser(null)
-        localStorage.removeItem('usuarioLogado')
+        googleLogout();
+        setUser(null);
+        localStorage.removeItem('usuarioLogado');
         navigate('/');
     }
 
